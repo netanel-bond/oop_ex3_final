@@ -8,6 +8,16 @@ Rational::Rational(int numer, int denom)
 	{
 		m_numer = 0;
 		m_denom = 1;
+
+		return;
+	}
+
+	bool denom_neg = m_denom < 0, numer_neg = m_numer < 0;
+
+	if (m_denom < 0)
+	{
+		m_denom *= -1;
+		m_numer *= -1;
 	}
 
 

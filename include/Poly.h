@@ -4,7 +4,7 @@ class Database;
 class Poly
         {
     public:
-           Poly();//dfeult
+           Poly();  // default c-tor
            Poly(const std:vector<Rational>& coeffes);
            Poly(const Rational rat);
            Poly(const int coeffes);

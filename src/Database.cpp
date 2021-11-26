@@ -1,4 +1,9 @@
-#include <Database.cpp>
+#include "Database.h"
+#include "Rational.h"
+#include <iostream>
+
+
+using std::cout;
 
 Database::Database(const Rational rat)
 {
@@ -26,10 +31,10 @@ Database::Database(const std::vector<Rational>& rat)
             decress_size++;
 
     }
-    m_arrSize-=decress_size
+    m_arrSize -= decress_size;
     m_coeffes=new int [m_arrSize];
-    m_rat=new int [m_arrSize];
-    m_checkAllocate();
+    m_rat=new Rational [m_arrSize];
+    checkAllocate();
 
     for (int i = 0; i <rat_given_size ; ++i) {
         if(rat[i]!=0)
@@ -43,11 +48,11 @@ Database::Database(const std::vector<Rational>& rat)
 
 }
 
-void Database::m_checkAllocate()
+void Database::checkAllocate()
 {
-    if(m_coeffes==nullptr||m_rat==nullptr)
+    if(m_coeffes==nullptr || m_rat==nullptr)
     {
         cout <<"error in allocation data";
-        return EXIT_FAILURE;
+        exit(EXIT_FAILURE);
     }
 }
