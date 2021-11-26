@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/bar/Documents/school/yearB/ex03_oop/src/Database.cpp" "/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles/ex02.dir/src/Database.cpp.o"
-  "/Users/bar/Documents/school/yearB/ex03_oop/src/Poly.cpp" "/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles/ex02.dir/src/Poly.cpp.o"
-  "/Users/bar/Documents/school/yearB/ex03_oop/src/Rational.cpp" "/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles/ex02.dir/src/Rational.cpp.o"
-  "/Users/bar/Documents/school/yearB/ex03_oop/src/main.cpp" "/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles/ex02.dir/src/main.cpp.o"
+  "/Users/bar/Documents/school/yearB/ex03_oop_neth/src/Database.cpp" "/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles/ex02.dir/src/Database.cpp.o"
+  "/Users/bar/Documents/school/yearB/ex03_oop_neth/src/Poly.cpp" "/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles/ex02.dir/src/Poly.cpp.o"
+  "/Users/bar/Documents/school/yearB/ex03_oop_neth/src/Rational.cpp" "/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles/ex02.dir/src/Rational.cpp.o"
+  "/Users/bar/Documents/school/yearB/ex03_oop_neth/src/main.cpp" "/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles/ex02.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

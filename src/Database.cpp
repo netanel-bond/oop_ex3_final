@@ -19,6 +19,7 @@ Database::Database(const Rational rat)
 
 Database::Database(const int coeffes, const Rational rat)
 {
+
     m_coeffes=new int [1];
 
     m_rat= new Rational[1];
