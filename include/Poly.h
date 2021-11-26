@@ -1,5 +1,5 @@
 
-#include <iosfwd.h> //need to add ostream on cpp file too
+#include <iosfwd> //need to add ostream on cpp file too
 
 
 #include <vector>
@@ -11,7 +11,7 @@ class Rational;
 class Poly
 {
 public:
-        Poly(const std::vector<Rational>& coeffes); //c-tor for array of rationals
+        Poly(const std::vector<Rational>& rationals); //c-tor for array of rationals
 
         Poly();  // default c-tor, builds poly with 0 as rational
 
@@ -22,7 +22,7 @@ public:
 
 
         Poly &operator=(const Poly &);
-        Poly &operator+=(const Poly &);
+        Poly & operator+(const Poly& )const ;
         Poly &operator-=(const Poly &);
         Poly &operator*=(const Poly &);
         bool operator==(const Poly &)const;
@@ -31,11 +31,11 @@ public:
         Rational operator[](int);
         Poly operator()(Rational );
 private:
-        Database theData;
+        Database m_theData;
 };
-Poly operator+(const Poly&,const Poly& );
 Poly operator-(const Poly&,const Poly& );
-Poly operator+(const Poly&);
+Poly &operator+=(  Poly &,const Poly &);
+
 Poly operator-(const Poly&);
 
 bool operator!=(const Poly&,const Poly&);

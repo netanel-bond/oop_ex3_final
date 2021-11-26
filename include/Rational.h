@@ -1,5 +1,5 @@
 
-#include <iosfwd.h> //need to add ostream on cpp file too
+#include <iosfwd> //need to add ostream on cpp file too
 
 class Rational {
 
@@ -21,6 +21,8 @@ public:
 private:
 
 	int m_numer, m_denom;
+
+    Rational *getRational() const;
 };
 
 Rational operator+(const Rational&,const Rational& );

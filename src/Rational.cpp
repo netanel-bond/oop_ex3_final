@@ -1,6 +1,8 @@
 
 #include "Rational.h"
-#include "ostream.h"
+#include <iostream>
+
+
 Rational::Rational(int numer, int denom)
 	:m_numer(numer), m_denom(denom)
 {
@@ -24,6 +26,7 @@ Rational::Rational(int numer, int denom)
 
 }
 
+
 Rational operator+(const Rational rat1, const Rational rat2)
 {
 	Rational new_rat = Rational(rat1.getNumer() + rat2.getNumer(), rat1.getDenom() + rat2.getDenom());
@@ -42,6 +45,7 @@ int Rational::getNumer() const
 {
 	return m_numer;
 }
+
 
 int Rational::getDenom() const
 {
