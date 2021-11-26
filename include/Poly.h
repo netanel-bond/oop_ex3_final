@@ -1,5 +1,5 @@
 
-#include <iosfwd.h> //need to add ostream on cpp file too
+#include <iosfwd> //need to add ostream on cpp file too
 
 
 #include <vector>
@@ -19,8 +19,6 @@ public:
 
         Poly(const int coeffes, const Rational);    //  c-tor for an int for the exponent and rational
   
-
-
         Poly &operator=(const Poly &);
         Poly &operator+=(const Poly &);
         Poly &operator-=(const Poly &);
@@ -30,8 +28,9 @@ public:
 
         Rational operator[](int);
         Poly operator()(Rational );
+
 private:
-        Database theData;
+        Database m_theData;
 };
 Poly operator+(const Poly&,const Poly& );
 Poly operator-(const Poly&,const Poly& );
