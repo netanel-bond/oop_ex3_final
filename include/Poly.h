@@ -1,14 +1,25 @@
-#include <iosfwd.h> //need to add ostream on cpp file too
-class Rational;
-class Database;
-class Poly
-        {
 
-    public:
-           Poly();  // default c-tor
-           Poly(const std:vector<Rational>& coeffes);
-           Poly(const Rational rat);
-           Poly(const int coeffes);
+#include <iosfwd.h> //need to add ostream on cpp file too
+
+
+#include <vector>
+#include "Database.h"
+
+
+class Rational;
+
+class Poly
+{
+public:
+        Poly(const std::vector<Rational>& coeffes); //c-tor for array of rationals
+
+        Poly();  // default c-tor, builds poly with 0 as rational
+
+        Poly(const Rational rat);   //  c-tor for rational as scalar
+
+        Poly(const int coeffes, const Rational);    //  c-tor for an int for the exponent and rational
+  
+
 
         Poly &operator=(const Poly &);
         Poly &operator+=(const Poly &);
@@ -19,8 +30,8 @@ class Poly
 
         Rational operator[](int);
         Poly operator()(Rational );
-        private:
-    Database theData;
+private:
+        Database theData;
 };
 Poly operator+(const Poly&,const Poly& );
 Poly operator-(const Poly&,const Poly& );
@@ -31,4 +42,3 @@ bool operator!=(const Poly&,const Poly&);
 bool operator<=(const Poly&,const Poly&);
 bool operator>=(const Poly&,const Poly&);
 bool operator<(const Poly&,const Poly&);
-
