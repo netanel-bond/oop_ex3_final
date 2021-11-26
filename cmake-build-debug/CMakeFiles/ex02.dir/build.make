@@ -53,10 +53,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bar/Documents/school/yearB/ex03_oop
+CMAKE_SOURCE_DIR = /Users/bar/Documents/school/yearB/ex03_oop_neth
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ex02.dir/depend.make
@@ -68,55 +68,55 @@ include CMakeFiles/ex02.dir/flags.make
 
 CMakeFiles/ex02.dir/src/main.cpp.o: CMakeFiles/ex02.dir/flags.make
 CMakeFiles/ex02.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex02.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/main.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex02.dir/src/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/main.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop_neth/src/main.cpp
 
 CMakeFiles/ex02.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex02.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop/src/main.cpp > CMakeFiles/ex02.dir/src/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop_neth/src/main.cpp > CMakeFiles/ex02.dir/src/main.cpp.i
 
 CMakeFiles/ex02.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex02.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop/src/main.cpp -o CMakeFiles/ex02.dir/src/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop_neth/src/main.cpp -o CMakeFiles/ex02.dir/src/main.cpp.s
 
 CMakeFiles/ex02.dir/src/Rational.cpp.o: CMakeFiles/ex02.dir/flags.make
 CMakeFiles/ex02.dir/src/Rational.cpp.o: ../src/Rational.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex02.dir/src/Rational.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/Rational.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop/src/Rational.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex02.dir/src/Rational.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/Rational.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Rational.cpp
 
 CMakeFiles/ex02.dir/src/Rational.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex02.dir/src/Rational.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop/src/Rational.cpp > CMakeFiles/ex02.dir/src/Rational.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Rational.cpp > CMakeFiles/ex02.dir/src/Rational.cpp.i
 
 CMakeFiles/ex02.dir/src/Rational.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex02.dir/src/Rational.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop/src/Rational.cpp -o CMakeFiles/ex02.dir/src/Rational.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Rational.cpp -o CMakeFiles/ex02.dir/src/Rational.cpp.s
 
 CMakeFiles/ex02.dir/src/Poly.cpp.o: CMakeFiles/ex02.dir/flags.make
 CMakeFiles/ex02.dir/src/Poly.cpp.o: ../src/Poly.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex02.dir/src/Poly.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/Poly.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop/src/Poly.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex02.dir/src/Poly.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/Poly.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Poly.cpp
 
 CMakeFiles/ex02.dir/src/Poly.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex02.dir/src/Poly.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop/src/Poly.cpp > CMakeFiles/ex02.dir/src/Poly.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Poly.cpp > CMakeFiles/ex02.dir/src/Poly.cpp.i
 
 CMakeFiles/ex02.dir/src/Poly.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex02.dir/src/Poly.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop/src/Poly.cpp -o CMakeFiles/ex02.dir/src/Poly.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Poly.cpp -o CMakeFiles/ex02.dir/src/Poly.cpp.s
 
 CMakeFiles/ex02.dir/src/Database.cpp.o: CMakeFiles/ex02.dir/flags.make
 CMakeFiles/ex02.dir/src/Database.cpp.o: ../src/Database.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ex02.dir/src/Database.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/Database.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop/src/Database.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ex02.dir/src/Database.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex02.dir/src/Database.cpp.o -c /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Database.cpp
 
 CMakeFiles/ex02.dir/src/Database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex02.dir/src/Database.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop/src/Database.cpp > CMakeFiles/ex02.dir/src/Database.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Database.cpp > CMakeFiles/ex02.dir/src/Database.cpp.i
 
 CMakeFiles/ex02.dir/src/Database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex02.dir/src/Database.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop/src/Database.cpp -o CMakeFiles/ex02.dir/src/Database.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bar/Documents/school/yearB/ex03_oop_neth/src/Database.cpp -o CMakeFiles/ex02.dir/src/Database.cpp.s
 
 # Object files for target ex02
 ex02_OBJECTS = \
@@ -134,7 +134,7 @@ ex02: CMakeFiles/ex02.dir/src/Poly.cpp.o
 ex02: CMakeFiles/ex02.dir/src/Database.cpp.o
 ex02: CMakeFiles/ex02.dir/build.make
 ex02: CMakeFiles/ex02.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ex02"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ex02"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex02.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -146,6 +146,6 @@ CMakeFiles/ex02.dir/clean:
 .PHONY : CMakeFiles/ex02.dir/clean
 
 CMakeFiles/ex02.dir/depend:
-	cd /Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bar/Documents/school/yearB/ex03_oop /Users/bar/Documents/school/yearB/ex03_oop /Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug /Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug /Users/bar/Documents/school/yearB/ex03_oop/cmake-build-debug/CMakeFiles/ex02.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bar/Documents/school/yearB/ex03_oop_neth /Users/bar/Documents/school/yearB/ex03_oop_neth /Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug /Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug /Users/bar/Documents/school/yearB/ex03_oop_neth/cmake-build-debug/CMakeFiles/ex02.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ex02.dir/depend
 

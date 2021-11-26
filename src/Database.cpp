@@ -9,15 +9,15 @@ Database::Database(const Rational rat)
 {
     m_coeffes=new int [1];
     m_rat= new Rational[1];
-    m_allocate();
+    checkAllocate();
     m_coeffes[0]=0;
     m_rat[0]=rat;
 }
 Database::Database(const Rational rat,const int coeffes)
 {
-    m_coeffes=new int [1];
+    m_coeffes=new int[1];
     m_rat= new Rational[1];
-    m_allocate();
+    checkAllocate();
     m_coeffes[0]=coeffes;
     m_rat[0]=rat;
 }

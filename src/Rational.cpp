@@ -1,6 +1,6 @@
 
 #include "Rational.h"
-
+#include "ostream.h"
 Rational::Rational(int numer, int denom)
 	:m_numer(numer), m_denom(denom)
 {

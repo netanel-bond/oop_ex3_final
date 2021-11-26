@@ -1,4 +1,5 @@
 
+#include <iosfwd.h> //need to add ostream on cpp file too
 
 class Rational {
 
@@ -9,14 +10,32 @@ public:
 	int getNumer() const;
 
 	int getDenom() const;
+    int numerator() const;
+    int denominator() const;
 
+    Rational &operator=(const Rational &);
+
+    bool operator==(const Rational &)const;
+    bool operator>(const Rational&)const;
 
 private:
 
 	int m_numer, m_denom;
 };
 
+Rational operator+(const Rational&,const Rational& );
+Rational operator-(const Rational&,const Rational& );
+Rational operator*(const Rational&,const Rational& );
+Rational operator+(const Rational&);
+Rational operator-(const Rational&);
+
+bool operator!=(const Rational&,const Rational&);
+bool operator<=(const Rational&,const Rational&);
+bool operator>=(const Rational&,const Rational&);
+bool operator<(const Rational&,const Rational&);
 
 
-Rational operator+(const Rational rat1, const Rational rat2);
-Rational operator-(const Rational rat1, const Rational rat2);
+
+
+std::ostream& operator<<(std::ostream&,const Rational&);
+
