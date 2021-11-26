@@ -19,8 +19,6 @@ public:
 
         Poly(const int coeffes, const Rational);    //  c-tor for an int for the exponent and rational
   
-
-
         Poly &operator=(const Poly &);
         Poly & operator+(const Poly& )const ;
         Poly &operator-=(const Poly &);
@@ -30,6 +28,7 @@ public:
 
         Rational operator[](int);
         Poly operator()(Rational );
+
 private:
         Database m_theData;
 };
