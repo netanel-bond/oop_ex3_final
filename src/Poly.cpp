@@ -16,23 +16,24 @@ Poly::Poly(const int coeffe, const Rational rat) : m_theData(coeffe, rat) {}
 Poly &Poly::operator=(const Poly &right) {
     // this.~m_theData();
 
-        Database newDatabase(right.m_theData);
-        this->m_theData = newDatabase;
+    Database newDatabase(right.m_theData);
+    this->m_theData = newDatabase;
 
     return *this;
 }
 
-Poly &Poly::operator+(const Poly &right) const{
+Poly &Poly::operator+(const Poly &right) const {
 
 
-        Database newDatabase(this->m_theData,right.m_theData);
+    Database newDatabase(this->m_theData, right.m_theData);
 
 
-        Poly newPoly;
-        newPoly.m_theData=newDatabase;
+    Poly newPoly;
+    newPoly.m_theData = newDatabase;
 
 
 }
+
 /*Poly &Poly::operator-(const Poly left7,const Poly &right) const{
 
     Database newDatabase(this->m_theData,right.m_theData);
@@ -43,33 +44,45 @@ Poly &Poly::operator+(const Poly &right) const{
 
 
 }*/
-Poly Poly::operator-()
-{
+Poly Poly::operator-() {
     Database newDatabase(this->m_theData);
     newDatabase.minus();
     Poly newPoly;
-    newPoly.m_theData=newDatabase;
+    newPoly.m_theData = newDatabase;
     return newPoly;
 
 }
 
-Poly & operator+=(Poly &left, const Poly &right) {
+Poly &operator+=(Poly &left, const Poly &right) {
 
-    Poly newPoly=left+right;
+    Poly newPoly = left + right;
     return newPoly;
 }
 
 
-bool Poly :: operator==( const Poly &right)const  {
-    int expoL=deg(), expoR=deg();
+bool Poly::operator==(const Poly &right) const {
+    int expoL = deg(0), expoR = deg(0);
 
-    return(this ->m_theData.checkEquals(expoL, expoR));
+    return (this->m_theData.checkEquals(expoL, expoR));
 }
 
-bool  operator!=( const Poly &left,const Poly &right)  {
-    return!(left==right);
+bool operator!=(const Poly &left, const Poly &right) {
+    return !(left == right);
 }
 
-int Poly ::deg() const {
-    return this->m_theData.getExpo(0);
+int Poly::deg(int i) const {
+    return this->m_theData.getExpo(i);
+}
+
+Rational Poly::operator[](int i) const {
+    if (this->m_theData.rationalMekadem(i) != -1) {
+        return this->m_theData.rationalMekadem(i);
+    }
+
+}
+
+Rational Poly::operator()(Rational r) const {
+    if (this->m_theData.polinom(r) != -1) {
+        return this->m_theData.polinom(r);
+    }
 }
