@@ -11,7 +11,7 @@ class Rational;
 class Poly
 {
 public:
-        Poly(const std::vector<Rational>& coeffes); //c-tor for array of rationals
+        Poly(const std::vector<Rational>& rationals); //c-tor for array of rationals
 
         Poly();  // default c-tor, builds poly with 0 as rational
 
@@ -20,7 +20,7 @@ public:
         Poly(const int coeffes, const Rational);    //  c-tor for an int for the exponent and rational
   
         Poly &operator=(const Poly &);
-        Poly &operator+=(const Poly &);
+        Poly & operator+(const Poly& )const ;
         Poly &operator-=(const Poly &);
         Poly &operator*=(const Poly &);
         bool operator==(const Poly &)const;
@@ -32,9 +32,9 @@ public:
 private:
         Database m_theData;
 };
-Poly operator+(const Poly&,const Poly& );
 Poly operator-(const Poly&,const Poly& );
-Poly operator+(const Poly&);
+Poly &operator+=(  Poly &,const Poly &);
+
 Poly operator-(const Poly&);
 
 bool operator!=(const Poly&,const Poly&);

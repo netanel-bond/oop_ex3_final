@@ -1,6 +1,9 @@
 
 #include "Rational.h"
-#include "ostream"
+
+#include <iostream>
+
+
 
 Rational::Rational(int numer, int denom)
 	:m_numer(numer), m_denom(denom)
@@ -65,6 +68,7 @@ int Rational::getNumer() const
 {
 	return m_numer;
 }
+
 
 int Rational::getDenom() const
 {

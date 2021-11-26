@@ -21,6 +21,8 @@ public:
 private:
 
 	int m_numer, m_denom;
+
+    Rational *getRational() const;
 };
 
 Rational operator+(const Rational&,const Rational& );
