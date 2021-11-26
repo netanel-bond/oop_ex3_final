@@ -33,10 +33,26 @@ Poly &Poly::operator+(const Poly &right) const{
 
 
 }
-Poly operator-(const Poly & curr)
+/*Poly &Poly::operator-(const Poly left7,const Poly &right) const{
+
+    Database newDatabase(this->m_theData,right.m_theData);
+
+
+    Poly newPoly;
+    newPoly.m_theData=newDatabase;
+
+
+}*/
+Poly Poly::operator-()
 {
+    Database newDatabase(this->m_theData);
+    newDatabase.minus();
+    Poly newPoly;
+    newPoly.m_theData=newDatabase;
+    return newPoly;
 
 }
+
 Poly & operator+=(Poly &left, const Poly &right) {
 
     Poly newPoly=left+right;
@@ -44,3 +60,16 @@ Poly & operator+=(Poly &left, const Poly &right) {
 }
 
 
+bool Poly :: operator==( const Poly &right)const  {
+    int expoL=deg(), expoR=deg();
+
+    return(this ->m_theData.checkEquals(expoL, expoR));
+}
+
+bool  operator!=( const Poly &left,const Poly &right)  {
+    return!(left==right);
+}
+
+int Poly ::deg() const {
+    return this->m_theData.getExpo(0);
+}

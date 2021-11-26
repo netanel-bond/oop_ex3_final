@@ -4,7 +4,7 @@
 #include "Rational.h"
 
 
-
+class Poly;
 class Database{
 public:
 
@@ -14,6 +14,7 @@ public:
     Database(const std::vector<Rational>&);     //  c-tor for array of rationals
     Database(const Database&); // copy c-tor
     Database(const Database,const Database);// copy c-tor
+    bool checkEquals(int ,int) const;
 
     int getExpo(int)const;
     Rational  getRational(int)const;
@@ -21,6 +22,7 @@ public:
  //   Rational SetRat(int);
     int getArrSize()const;
     void reAllocate(int);
+    void minus();
 private:
 
     int *m_expo ;        //  array of exponents

@@ -18,12 +18,13 @@ public:
         Poly(const Rational rat);   //  c-tor for rational as scalar
 
         Poly(const int coeffes, const Rational);    //  c-tor for an int for the exponent and rational
-  
+        bool operator==(const Poly &)const;
+        int deg() const;
         Poly &operator=(const Poly &);
         Poly & operator+(const Poly& )const ;
         Poly &operator-=(const Poly &);
         Poly &operator*=(const Poly &);
-        bool operator==(const Poly &)const;
+        Poly operator-();
         bool operator>(const Poly&)const;
 
         Rational operator[](int);
@@ -32,12 +33,10 @@ public:
 private:
         Database m_theData;
 };
-Poly operator-(const Poly&,const Poly& );
+Poly operator-(  const Poly&,const Poly& );
 Poly &operator+=(  Poly &,const Poly &);
 
-Poly operator-(const Poly&);
+
 
 bool operator!=(const Poly&,const Poly&);
-bool operator<=(const Poly&,const Poly&);
-bool operator>=(const Poly&,const Poly&);
 bool operator<(const Poly&,const Poly&);

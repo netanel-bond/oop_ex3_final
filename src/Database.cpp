@@ -158,3 +158,16 @@ void Database::insertRest(const Database data, int count, int newCounter) {
     }
 }
 
+void Database::minus()
+{
+    for(int i=0;i<m_arrSize;i++)
+    {
+        m_rat[i]=-m_rat[i];
+    }
+}
+bool Database::checkEquals(int expoL,nt expoR) const {
+    if(expoL==expoR)
+        return true;
+    else
+        return false;
+}
