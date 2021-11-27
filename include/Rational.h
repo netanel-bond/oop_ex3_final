@@ -17,6 +17,8 @@ public:
 
     Rational& operator+=(const Rational&);
 
+    Rational& operator-();
+
 private:
 
     int m_numer, m_denom;
@@ -48,8 +50,6 @@ Rational operator/(const Rational &, const Rational &);
 Rational& operator/=(Rational&, const Rational&);
 
 Rational& operator+(Rational& rat);
-
-Rational& operator-(Rational& rat);
 
 bool operator>(const Rational&, const Rational&);
 

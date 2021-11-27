@@ -49,9 +49,14 @@ Rational operator+(const Rational& rat1, const Rational& rat2)
 Rational& Rational::operator+=(const Rational& rat)
 {
 
-	m_numer = rat.m_denom * m_numer + m_denom * rat.m_numer;
+	if (m_denom == rat.m_denom)
+		m_numer += rat.m_numer;
+	else
+	{
+		m_numer = rat.m_denom * m_numer + m_denom * rat.m_numer;
 
-	m_denom = lcmFinder(m_denom, rat.m_denom);
+		m_denom = lcmFinder(m_denom, rat.m_denom);
+	}
 
 	reduction();
 
@@ -95,7 +100,7 @@ Rational operator/(const Rational& rat1, const Rational& rat2)
 {
 	Rational inverse_rat2 = Rational(rat2.getDenom(), rat2.getNumer());
 
-	Rational new_rat = rat1 * rat2;
+	Rational new_rat = rat1 * inverse_rat2;
 
 	return new_rat;
 }
@@ -107,11 +112,11 @@ Rational& operator/=(Rational& rat1, const Rational& rat2)
 	return rat1;
 }
 
-Rational& operator-(Rational& rat)
+Rational& Rational::operator-()
 {
-	rat = 0 - rat;
+	m_numer *= -1;
 
-	return rat;
+	return *this;
 }
 
 Rational& operator+(Rational& rat)
