@@ -10,24 +10,24 @@ Database::~Database() {
     delete[]m_rat;
 }
 
-Database::Database(const Database &right) {
-    delete[]this->m_expo;
-    delete[]this->m_rat;
-
-    this->m_arrSize = right.getArrSize();
-
-    m_expo = new int[this->m_arrSize];
-    m_rat = new Rational[this->m_arrSize];
-    checkAllocate();
-
-    for (int i = 0; i < this->m_arrSize; ++i) {
-        if (right.getRational(i) != 0) {
-            m_rat[i] = right.getRational(i);
-            m_expo[i] = i;
-        }
-    }
-
-}
+//Database::Database(const Database &right) {
+//    //delete[]this->m_expo;
+//    //delete[]this->m_rat;
+//
+//    this->m_arrSize = right.getArrSize();
+//
+//    m_expo = new int[this->m_arrSize];
+//    m_rat = new Rational[this->m_arrSize];
+//    checkAllocate();
+//
+//    for (int i = 0; i < this->m_arrSize; ++i) {
+//        if (right.getRational(i) != 0) {
+//            m_rat[i] = right.getRational(i);
+//            m_expo[i] = i;
+//        }
+//    }
+//
+//}
 
 Database::Database(const Rational rat) {
     m_expo = new int[1];
@@ -113,13 +113,61 @@ void Database::reAllocate(int size) {
     m_expo = new int[size];
 }
 
+//Database Database::operator+ (const Database right)
+//{
+//    int arrIncSize = 0;
+//    bool isContatined = false;
+//    for (int i = 0; i < this->getArrSize(); i++) {
+//        isContatined = false;
+//        for (int j = 0; j < right.getArrSize(); j++) {
+//            if (this->m_expo[i] == right.m_expo[j])
+//                isContatined = true;
+//        }
+//
+//        if (!isContatined)
+//            arrIncSize++;
+//    }
+//
+//    m_arrSize += arrIncSize;
+//    int startJ = 0;
+//    bool notFound = false;
+//    m_rat = new Rational[m_arrSize];
+//    m_expo = new int[m_arrSize];
+//    int lCounter = 0, rCounter = 0, newCounter = 0;
+//    while (lCounter < this->getArrSize() && rCounter < right.getArrSize()) {
+//        if (this->m_expo[lCounter] < right.m_expo[rCounter]) {
+//            m_rat[newCounter] = right.m_rat[rCounter];
+//            m_expo[newCounter] = m_arrSize - newCounter;
+//            rCounter++;
+//        }
+//        else if (this->m_expo[lCounter] > right.m_expo[rCounter]) {
+//            m_rat[newCounter] = this->m_rat[lCounter];
+//            m_expo[newCounter] = m_arrSize - newCounter;
+//        }
+//        else {
+//            m_rat[newCounter] = this->m_rat[lCounter] + right.m_rat[rCounter];
+//            m_expo[newCounter] = m_arrSize - newCounter;
+//        }
+//        newCounter++;
+//    }
+//    insertRest(*this, lCounter, newCounter);
+//    insertRest(right, rCounter, newCounter);
+//
+//    return *this;
+//}
+
 Database::Database(const Database left, const Database right) {
     int arrIncSize = 0;
+    bool isContatined = false;
     for (int i = 0; i < left.getArrSize(); i++) {
-        for (int j = 0; i < right.getArrSize(); j++) {
+        isContatined = false;
+        for (int j = 0; j < right.getArrSize(); j++) {
             if (left.m_expo[i] == right.m_expo[j])
-                arrIncSize++;
+                isContatined = true;
         }
+
+        if (!isContatined)
+            arrIncSize++;
     }
 
     m_arrSize += arrIncSize;
@@ -133,14 +181,18 @@ Database::Database(const Database left, const Database right) {
             m_rat[newCounter] = right.m_rat[rCounter];
             m_expo[newCounter] = m_arrSize - newCounter;
             rCounter++;
-        } else if (left.m_expo[lCounter] > right.m_expo[rCounter]) {
+        }
+        else if (left.m_expo[lCounter] > right.m_expo[rCounter]) {
             m_rat[newCounter] = left.m_rat[lCounter];
             m_expo[newCounter] = m_arrSize - newCounter;
-        } else {
+        }
+        else {
             m_rat[newCounter] = left.m_rat[lCounter] + right.m_rat[rCounter];
             m_expo[newCounter] = m_arrSize - newCounter;
+            lCounter++;
+            rCounter++;
         }
-        newCounter++;
+        newCounter++; 
     }
     insertRest(left, lCounter, newCounter);
     insertRest(right, rCounter, newCounter);

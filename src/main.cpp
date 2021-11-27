@@ -19,6 +19,7 @@ int main()
 	//cout << number1 << endl;
 	//cout << (number == number1);
 
+
 	auto rationals = std::vector<Rational> { Rational(14,1), 
 		Rational(), Rational(), Rational(5,1), Rational(), Rational(17,2)};
 
@@ -27,9 +28,9 @@ int main()
 
 	Poly p(rationals);
 
-	cout << p << endl;
+	//cout << p << endl;
 
-	p += p;
+	//Poly p2 = p + p;
 
-	cout << p;
+	cout << p + p;
 }

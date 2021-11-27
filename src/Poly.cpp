@@ -35,6 +35,8 @@ Poly Poly::operator+(const Poly &right) const {
 
     Poly newPoly;
 
+    //newPoly.m_theData + right.m_theData;
+
     newPoly.m_theData = newDatabase;
 
     return newPoly;
