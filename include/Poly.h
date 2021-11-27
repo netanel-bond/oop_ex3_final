@@ -36,6 +36,8 @@ public:
 private:
     Database m_theData;
 };
+
+
 Poly operator-(  const Poly&,const Poly& );
 Poly &operator+=(  Poly &,const Poly &);
 Poly &operator-=(Poly &,const Poly &);

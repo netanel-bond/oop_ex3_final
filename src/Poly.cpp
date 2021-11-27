@@ -22,17 +22,17 @@ Poly &Poly::operator=(const Poly &right) {
     return *this;
 }
 
-Poly &Poly::operator+(const Poly &right) const {
-
-
-    Database newDatabase(this->m_theData, right.m_theData);
-
-
-    Poly newPoly;
-    newPoly.m_theData = newDatabase;
-
-
-}
+//Poly &Poly::operator+(const Poly &right) const {
+//
+//
+//    Database newDatabase(this->m_theData, right.m_theData);
+//
+//
+//    Poly newPoly;
+//    newPoly.m_theData = newDatabase;
+//
+//
+//}
 
 /*Poly &Poly::operator-(const Poly left7,const Poly &right) const{
 
@@ -53,11 +53,11 @@ Poly Poly::operator-() {
 
 }
 
-Poly &operator+=(Poly &left, const Poly &right) {
-
-    Poly newPoly = left + right;
-    return newPoly;
-}
+//Poly &operator+=(Poly &left, const Poly &right) {
+//
+//    Poly newPoly = left + right;
+//    return newPoly;
+//}
 
 
 bool Poly::operator==(const Poly &right) const {
