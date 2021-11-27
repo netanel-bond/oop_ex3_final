@@ -15,7 +15,7 @@ public:
     Database(const int, const Rational);   //  c-tor for scalar and exponent
     Database(const std::vector<Rational> &);     //  c-tor for array of rationals
     Database(const Database &); // copy c-tor
-    Database(const Database, const Database);// copy c-tor
+    Database(const Database, const Database);// sum of parameters c-tor
     bool checkEquals(int, int) const;
 
     Rational rationalMekadem(int i) const;

@@ -1,5 +1,8 @@
 
 #include "Poly.h"
+#include <iostream>
+
+using std::cout;
 
 //c-tor for array of rationals
 Poly::Poly(const std::vector<Rational> &rationals) : m_theData(rationals) {}
@@ -13,7 +16,7 @@ Poly::Poly(const Rational rat) : m_theData(rat) {}
 //  c-tor for an int for the exponent and rational
 Poly::Poly(const int coeffe, const Rational rat) : m_theData(coeffe, rat) {}
 
-Poly &Poly::operator=(const Poly &right) {
+Poly& Poly::operator=(const Poly &right) {
     // this.~m_theData();
 
     Database newDatabase(right.m_theData);
@@ -22,17 +25,20 @@ Poly &Poly::operator=(const Poly &right) {
     return *this;
 }
 
-//Poly &Poly::operator+(const Poly &right) const {
-//
-//
-//    Database newDatabase(this->m_theData, right.m_theData);
-//
-//
-//    Poly newPoly;
-//    newPoly.m_theData = newDatabase;
-//
-//
-//}
+Poly Poly::operator+(const Poly &right) const {
+
+
+    Database newDatabase(this->m_theData, right.m_theData);
+
+    //Database newDatabase = this->m_theData + right.m_theData;
+
+
+    Poly newPoly;
+
+    newPoly.m_theData = newDatabase;
+
+    return newPoly;
+}
 
 /*Poly &Poly::operator-(const Poly left7,const Poly &right) const{
 
@@ -44,6 +50,7 @@ Poly &Poly::operator=(const Poly &right) {
 
 
 }*/
+
 Poly Poly::operator-() {
     Database newDatabase(this->m_theData);
     newDatabase.minus();
@@ -53,11 +60,11 @@ Poly Poly::operator-() {
 
 }
 
-//Poly &operator+=(Poly &left, const Poly &right) {
-//
-//    Poly newPoly = left + right;
-//    return newPoly;
-//}
+Poly &operator+=(Poly &left, const Poly &right) {
+
+    Poly newPoly = left + right;
+    return newPoly;
+}
 
 
 bool Poly::operator==(const Poly &right) const {
@@ -81,8 +88,37 @@ Rational Poly::operator[](int i) const {
 
 }
 
+int Poly::getDataSize() const
+{
+    return m_theData.getArrSize();
+}
+
+int Poly::getExpo(int index) const
+{
+    return m_theData.getExpo(index);
+}
+
+Rational Poly::getRational(int index) const
+{
+    return m_theData.getRational(index);
+}
+
 Rational Poly::operator()(Rational r) const {
     if (this->m_theData.polinom(r) != -1) {
         return this->m_theData.polinom(r);
     }
+}
+
+std::ostream& operator<<(std::ostream& output, const Poly& poly)
+{
+    int dataSize = poly.getDataSize();
+    for (int i = 0; i < dataSize; i++)
+    {
+        if (poly.getExpo(i) == 0)
+            cout << poly.getRational(i);
+        else
+            cout << poly.getRational(i) << "*X^"  << poly.getExpo(i) << ' ' << "+ ";
+    }
+        
+    return output;
 }

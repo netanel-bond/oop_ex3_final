@@ -21,11 +21,17 @@ public:
 
     int deg(int) const;
 
+    int getDataSize() const;
+
+    int getExpo(int) const;
+
+    Rational getRational(int) const;
+
     Poly &operator=(const Poly &);
 
-    Poly &operator+(const Poly &) const;
+    Poly operator+(const Poly &) const;
 
-    Poly &operator*(const Poly &) const;
+    Poly operator*(const Poly &) const;
 
     Poly operator-();
 
@@ -33,16 +39,20 @@ public:
 
     Rational operator()(Rational) const;
 
+
+
 private:
     Database m_theData;
 };
 
+Poly operator-(const Poly&,const Poly& );
 
-Poly operator-(  const Poly&,const Poly& );
-Poly &operator+=(  Poly &,const Poly &);
-Poly &operator-=(Poly &,const Poly &);
-Poly &operator*=(Poly &,const Poly &);
+Poly& operator+=(  Poly &,const Poly &);
 
+Poly& operator-=(Poly &,const Poly &);
+
+Poly& operator*=(Poly &,const Poly &);
 
 bool operator!=(const Poly&,const Poly&);
+
 std::ostream &operator<<(std::ostream &, const Poly &);

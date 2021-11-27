@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include <iosfwd> //need to add ostream on cpp file too
 
 class Rational {
@@ -10,8 +12,6 @@ public:
     int getNumer() const;
 
     int getDenom() const;
-    //int numerator() const;
-    //int denominator() const;
 
     Rational& operator=(const Rational &);
 

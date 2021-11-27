@@ -53,25 +53,36 @@ Database::Database(const int coeffes, const Rational rat) {
 }
 
 Database::Database(const std::vector<Rational> &rat) {
+
     int decress_size = 0;
-    m_arrSize = sizeof(rat) / sizeof(rat[0]);
+
+    m_arrSize = rat.size();
 
     for (int i = 0; i < m_arrSize; i++) {
         if (rat[i] == 0)
             decress_size++;
     }
 
-    m_arrSize -= decress_size;
-    m_expo = new int[m_arrSize];
-    m_rat = new Rational[m_arrSize];
+
+
+    int realArraySize = m_arrSize - decress_size;
+    m_expo = new int[realArraySize];
+    m_rat = new Rational[realArraySize];
     checkAllocate();
 
+    int j = 0;
     for (int i = 0; i < m_arrSize; ++i) {
-        if (rat[i] != 0) {
-            m_rat[i] = rat[i];
-            m_expo[i] = m_arrSize - i;
+        if (rat[i] != 0) 
+        {
+            m_rat[j] = rat[i];
+
+            m_expo[j] = m_arrSize - i - 1;
+
+            j++;
         }
     }
+
+    m_arrSize -= decress_size;
 }
 
 void Database::checkAllocate() {

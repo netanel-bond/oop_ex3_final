@@ -148,10 +148,10 @@ bool operator<(const Rational& rat1, const Rational& rat2)
 	Rational new_rat = rat1 - rat2;
 
 //		if result is above 0 return false
-	if (new_rat.getNumer() > 0)
-		return false;
+	if (new_rat.getNumer() < 0)
+		return true;
 
-	return true;
+	return false;
 }
 
 bool operator<=(const Rational& rat1, const Rational& rat2)
@@ -161,7 +161,10 @@ bool operator<=(const Rational& rat1, const Rational& rat2)
 
 bool operator==(const Rational& rat1, const Rational& rat2)
 {
-	return !(rat1 > rat2 || rat1 < rat2);
+	bool bigger = rat1 > rat2;
+	bool smaller = rat1 < rat2;
+
+	return !(bigger || smaller);
 }
 
 bool operator!=(const Rational& rat1, const Rational& rat2)
