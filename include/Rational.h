@@ -5,37 +5,46 @@ class Rational {
 
 public:
 
-	Rational(int numer = 0, int denom = 1);
+    Rational(int numer = 0, int denom = 1);
 
-	int getNumer() const;
+    int getNumer() const;
 
-	int getDenom() const;
+    int getDenom() const;
     //int numerator() const;
     //int denominator() const;
 
-    Rational& operator=(const Rational &);
+    Rational &operator=(const Rational &);
 
-    bool operator==(const Rational &)const;
-    bool operator>(const Rational&)const;
+    bool operator==(const Rational &) const;
+
+    bool operator>(const Rational &) const;
 
 private:
 
-	int m_numer, m_denom;
+    int m_numer, m_denom;
 
     Rational *getRational() const;
 };
 
-Rational operator+(const Rational&,const Rational& );
-Rational operator-(const Rational&,const Rational& );
-Rational operator*(const Rational&,const Rational& );
-Rational operator/(const Rational&, const Rational&);
-Rational operator+(const Rational&);
-Rational operator-(const Rational&);
+Rational operator+(const Rational &, const Rational &);
 
-bool operator!=(const Rational&,const Rational&);
-bool operator<=(const Rational&,const Rational&);
-bool operator>=(const Rational&,const Rational&);
-bool operator<(const Rational&,const Rational&);
+Rational operator-(const Rational &, const Rational &);
+
+Rational operator*(const Rational &, const Rational &);
+
+Rational operator/(const Rational &, const Rational &);
+
+Rational operator+(const Rational &);
+
+Rational operator-(const Rational &);
+
+bool operator!=(const Rational &, const Rational &);
+
+bool operator<=(const Rational &, const Rational &);
+
+bool operator>=(const Rational &, const Rational &);
+
+bool operator<(const Rational &, const Rational &);
 
 
-std::ostream& operator<<(std::ostream&,const Rational&);
+std::ostream &operator<<(std::ostream &, const Rational &);

@@ -64,6 +64,10 @@ Rational operator-(const Rational& rat)
 	return new_rat;
 }
 
+std::ostream &operator<<(std::ostream &, const Rational &) {
+    return <#initializer#>;// wtf is this shit
+}
+
 int Rational::getNumer() const
 {
 	return m_numer;
