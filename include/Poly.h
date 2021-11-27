@@ -29,7 +29,7 @@ public:
 
     Poly &operator=(const Poly &);
 
-    Poly operator+(const Poly &) const;
+    Poly& operator+=( const Poly&);
 
     Poly operator*(const Poly &) const;
 
@@ -40,14 +40,15 @@ public:
     Rational operator()(Rational) const;
 
 
-
 private:
     Database m_theData;
 };
 
+Poly operator+(const Poly&, const Poly&);
+
 Poly operator-(const Poly&,const Poly& );
 
-Poly& operator+=(  Poly &,const Poly &);
+
 
 Poly& operator-=(Poly &,const Poly &);
 

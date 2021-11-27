@@ -14,79 +14,65 @@ Poly::Poly() : m_theData(0) {}
 Poly::Poly(const Rational rat) : m_theData(rat) {}
 
 //  c-tor for an int for the exponent and rational
-Poly::Poly(const int coeffe, const Rational rat) : m_theData(coeffe, rat) {}
+Poly::Poly(const int expo, const Rational rat) : m_theData(expo, rat) {}
 
-Poly& Poly::operator=(const Poly &right) {
-    // this.~m_theData();
+Poly& Poly::operator=(const Poly &right) 
+{
 
-    Database newDatabase(right.m_theData);
-    this->m_theData = newDatabase;
+    this->m_theData = right.m_theData;
+
+    return *this;
+
+}
+
+Poly operator+(const Poly& left ,const Poly &right)
+{
+
+    Poly new_poly = left;
+
+    new_poly += right;
+
+    return new_poly;
+}
+
+Poly& Poly::operator+=(const Poly& poly)
+{
+    this->m_theData = this->m_theData + poly.m_theData;
 
     return *this;
 }
 
-Poly Poly::operator+(const Poly &right) const {
 
+Poly Poly::operator-() 
+{
 
-    Database newDatabase(this->m_theData, right.m_theData);
-
-    //Database newDatabase = this->m_theData + right.m_theData;
-
-
-    Poly newPoly;
-
-    //newPoly.m_theData + right.m_theData;
-
-    newPoly.m_theData = newDatabase;
-
-    return newPoly;
-}
-
-/*Poly &Poly::operator-(const Poly left7,const Poly &right) const{
-
-    Database newDatabase(this->m_theData,right.m_theData);
-
-
-    Poly newPoly;
-    newPoly.m_theData=newDatabase;
-
-
-}*/
-
-Poly Poly::operator-() {
-    Database newDatabase(this->m_theData);
-    newDatabase.minus();
-    Poly newPoly;
-    newPoly.m_theData = newDatabase;
-    return newPoly;
 
 }
 
-Poly &operator+=(Poly &left, const Poly &right) {
+Poly &operator+=(Poly &left, const Poly &right)
+{
 
-    Poly newPoly = left + right;
-    return newPoly;
+
 }
 
 
-bool Poly::operator==(const Poly &right) const {
-    int expoL = deg(0), expoR = deg(0);
+bool Poly::operator==(const Poly &right) const 
+{
 
-    return (this->m_theData.checkEquals(expoL, expoR));
 }
 
-bool operator!=(const Poly &left, const Poly &right) {
+bool operator!=(const Poly &left, const Poly &right) 
+{
     return !(left == right);
 }
 
 int Poly::deg(int i) const {
-    return this->m_theData.getExpo(i);
+    
 }
 
-Rational Poly::operator[](int i) const {
-    if (this->m_theData.rationalMekadem(i) != -1) {
-        return this->m_theData.rationalMekadem(i);
-    }
+Rational Poly::operator[](int i) const 
+{
+
 
 }
 
@@ -97,18 +83,12 @@ int Poly::getDataSize() const
 
 int Poly::getExpo(int index) const
 {
-    return m_theData.getExpo(index);
+    
 }
 
 Rational Poly::getRational(int index) const
 {
-    return m_theData.getRational(index);
-}
-
-Rational Poly::operator()(Rational r) const {
-    if (this->m_theData.polinom(r) != -1) {
-        return this->m_theData.polinom(r);
-    }
+    
 }
 
 std::ostream& operator<<(std::ostream& output, const Poly& poly)

@@ -2,7 +2,7 @@
 #include <vector>;
 
 #include "Rational.h"
-
+#include "List.h"
 
 class Poly;
 
@@ -14,34 +14,23 @@ public:
     Database(const Rational);                 //  c-tor for scalar
     Database(const int, const Rational);   //  c-tor for scalar and exponent
     Database(const std::vector<Rational> &);     //  c-tor for array of rationals
-    //Database(const Database &); // copy c-tor
-    Database(const Database, const Database);// sum of parameters c-tor
-    bool checkEquals(int, int) const;
-
-    Rational rationalMekadem(int i) const;
-
-    int polinom(Rational r) const;
 
     int getExpo(int) const;
 
     Rational getRational(int) const;
 
-    Database operator+ (const Database right);
+    int getListSize() const;
 
-
-    int getArrSize() const;
-
-    void reAllocate(int);
-
-    void minus();
+    Database& operator=(const Database right);
 
 private:
 
-    int *m_expo;        //  array of exponents
-    Rational *m_rat;        //  array of rationals
-    int m_arrSize;
+    List* m_head = NULL;
+    int m_listSize = 0;
 
-    void checkAllocate();
-
-    void insertRest(const Database, int, int);
+    void deleteList();
+    List* nodeAllocate(const int expo, const Rational& rat);
 };
+
+
+Database operator+ (const Database&);
