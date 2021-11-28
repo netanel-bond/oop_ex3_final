@@ -30,7 +30,7 @@ int main()
 	//cout << p << endl;
 
 	Poly p2,p1 ;
-    p1=p*2;
+    p1=5*p;
 
 	cout << p1;
 }

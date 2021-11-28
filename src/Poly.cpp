@@ -128,11 +128,25 @@ Poly operator*(const Poly& left, const int num)
 {
     Poly newPoly;
     if(num>0)
+        
         for (int i = 0;i < num;i++)
         {
-            
+           
+            newPoly += left;
+        } 
+
+    return newPoly;
+}
+Poly operator*(const int num, const Poly& left)
+{
+    Poly newPoly;
+    if (num > 0)
+
+        for (int i = 0;i < num;i++)
+        {
+
             newPoly += left;
         }
 
-    return new Polyl;
+    return newPoly;
 }
