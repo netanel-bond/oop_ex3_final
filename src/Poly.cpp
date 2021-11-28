@@ -120,33 +120,21 @@ Poly &Poly :: operator*=(const Poly& right)
     this->m_theData = this->m_theData * right.m_theData;
     return *this;
 }
-//Poly operator-(const Poly& left,const Poly& right)
-//{
-  //  return (left + (-1) * right);
-//}
+Poly operator-(const Poly& left,const Poly& right)
+{
+    return (left + (-1) * right);
+    }
 Poly operator*(const Poly& left, const int num)
 {
-    Poly newPoly;
-    if(num>0)
-        
-        for (int i = 0;i < num;i++)
-        {
-           
-            newPoly += left;
-        } 
+    Poly newPoly(num);
+    newPoly *= left;
 
     return newPoly;
 }
 Poly operator*(const int num, const Poly& left)
 {
-    Poly newPoly;
-    if (num > 0)
-
-        for (int i = 0;i < num;i++)
-        {
-
-            newPoly += left;
-        }
+    Poly newPoly(num);
+    newPoly *= left;
 
     return newPoly;
 }
