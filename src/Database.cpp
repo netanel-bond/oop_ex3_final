@@ -9,7 +9,7 @@ using std::endl;
 Database::~Database() 
 {
 
-	deleteList();
+	//deleteList();
 
 }
 
@@ -166,22 +166,13 @@ Database operator+ (const Database &left,const Database& right)
 	List* newTail=NULL;
 	int size=0;
 	
-		while(lHead)//head or head ->next not sure 
+		while(lHead || rHead)//head or head ->next not sure 
 		{
-			while(rHead)
-			{
+			
 				struct List* temp = new (std::nothrow)struct List;
-				temp->next = NULL;
-				if (lHead->expo == rHead->expo)
-				{
-					size++;
-					//add aloc check
-					temp->rat = lHead->rat + rHead->rat;
-					temp->expo = lHead->expo;
-					lHead = lHead->next;
-					rHead = rHead->next;
-				}
-				else if (lHead->expo > rHead->expo)
+					
+			
+				 if (lHead && (!rHead || lHead->expo > rHead->expo))
 				{
 					size++;
 					//left.plusAddList(temp);
@@ -189,19 +180,31 @@ Database operator+ (const Database &left,const Database& right)
 					temp->expo = lHead->expo;
 
 					lHead = lHead->next;
-					if (lHead == NULL)
-						rHead->next;
+					
 
 				}
-				else 
+				else if(rHead &&(!lHead||lHead->expo<rHead->expo))
 				{
 					size++;
 					//right.plusAddList(rtemp);
 					temp->rat = rHead->rat;
 					temp->expo = rHead->expo;
 					rHead = rHead->next;
-					if (rHead == NULL)
-						lHead->next;
+					
+				 }
+				else if (lHead->expo == rHead->expo)
+				 {
+					 size++;
+					 //add aloc check
+					 temp->rat = lHead->rat + rHead->rat;
+					 temp->expo = lHead->expo;
+					 lHead = lHead->next;
+					 rHead = rHead->next;
+				 }
+				else
+				{
+					lHead = lHead->next;
+					rHead = rHead->next;
 				}
 
 				if (newHead==NULL)
@@ -213,14 +216,13 @@ Database operator+ (const Database &left,const Database& right)
 					newTail->next = temp;
 					newTail = temp;
 				}
-			}
-
 		}
+
+		
 		
 		newDatabase.setHead(newHead, size);
 		return newDatabase;
 
-	
 }
 /*void Database::plusAddList(List*& temp)//need to make more generic maybe ad l r heads
 {
@@ -291,17 +293,19 @@ int Database::getListSize() const
 Database& Database :: operator*(const Database right)
 {
 	List* lHead = this->getHead();
-	List* rHead = right.getHead();
+	//List* rHead = right.getHead();
 	Database newDatabase1,newDatabase2;
 	List* newHead1 = NULL,*newHead2;
 	List* newTail1 = NULL,newTail2;
 	
 	while (lHead)
 	{
-		struct List* temp = new (std::nothrow)struct List;
-		temp->next = NULL;
+		List* rHead = right.getHead();
+
 		while (rHead)
 		{	
+			struct List* temp = new (std::nothrow)struct List;
+			temp->next = NULL;
 
 			temp->rat = lHead->rat * rHead->rat;
 			temp->expo = lHead->expo + rHead->expo;
