@@ -19,7 +19,7 @@ public:
     Poly(const int coeffes, const Rational);    //  c-tor for an int for the exponent and rational
     bool operator==(const Poly &) const;
 
-    int deg(int) const;
+  //  int deg(int) const;
 
     int getDataSize() const;
 
@@ -31,13 +31,13 @@ public:
 
     Poly& operator+=( const Poly&);
 
-    Poly operator*(const Poly &) const;
+  //  Poly operator*(const Poly &) const;
 
-    Poly operator-();
+   // Poly operator-();
+//
+   // Rational operator[](int) const;
 
-    Rational operator[](int) const;
-
-    Rational operator()(Rational) const;
+    //Rational operator()(Rational) const;
 
 
 private:
@@ -46,14 +46,14 @@ private:
 
 Poly operator+(const Poly&, const Poly&);
 
-Poly operator-(const Poly&,const Poly& );
+//Poly operator-(const Poly&,const Poly& );
 
 
 
-Poly& operator-=(Poly &,const Poly &);
+//Poly& operator-=(Poly &,const Poly &);
 
-Poly& operator*=(Poly &,const Poly &);
+//Poly& operator*=(Poly &,const Poly &);
 
-bool operator!=(const Poly&,const Poly&);
+//bool operator!=(const Poly&,const Poly&);
 
 std::ostream &operator<<(std::ostream &, const Poly &);

@@ -24,11 +24,9 @@ Poly& Poly::operator=(const Poly &right)
     return *this;
 
 }
-
-Poly operator+(const Poly& left ,const Poly &right)
+Poly operator+(const Poly& left, const Poly& right)
 {
-
-    Poly new_poly = left;
+   Poly new_poly = left;
 
     new_poly += right;
 
@@ -42,55 +40,18 @@ Poly& Poly::operator+=(const Poly& poly)
     return *this;
 }
 
+int Poly::getDataSize()const {
+    return m_theData.getListSize();
+}
+int Poly::getExpo(int i)const {
+    return m_theData.getExpo(i);
+}
 
-Poly Poly::operator-() 
+Rational Poly::getRational(int i)const
 {
-
-
+    return m_theData.getRational(i);
+        
 }
-
-Poly &operator+=(Poly &left, const Poly &right)
-{
-
-
-}
-
-
-bool Poly::operator==(const Poly &right) const 
-{
-
-}
-
-bool operator!=(const Poly &left, const Poly &right) 
-{
-    return !(left == right);
-}
-
-int Poly::deg(int i) const {
-    
-}
-
-Rational Poly::operator[](int i) const 
-{
-
-
-}
-
-int Poly::getDataSize() const
-{
-    return m_theData.getArrSize();
-}
-
-int Poly::getExpo(int index) const
-{
-    
-}
-
-Rational Poly::getRational(int index) const
-{
-    
-}
-
 std::ostream& operator<<(std::ostream& output, const Poly& poly)
 {
     int dataSize = poly.getDataSize();

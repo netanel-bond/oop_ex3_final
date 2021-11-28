@@ -10,8 +10,8 @@ class Database {
 public:
 
     ~Database();
-
-    Database(const Rational);                 //  c-tor for scalar
+   // Databse();
+    Database(const Rational rat =0);                 //  c-tor for scalar
     Database(const int, const Rational);   //  c-tor for scalar and exponent
     Database(const std::vector<Rational> &);     //  c-tor for array of rationals
 
@@ -20,8 +20,12 @@ public:
     Rational getRational(int) const;
 
     int getListSize() const;
+    List* getHead()const;
+    void setHead(List*&,int size);
 
     Database& operator=(const Database right);
+   // void plusAddList(List*&temp);
+
 
 private:
 
@@ -31,6 +35,6 @@ private:
     void deleteList();
     List* nodeAllocate(const int expo, const Rational& rat);
 };
+Database operator+ (const Database&, const Database&);
 
 
-Database operator+ (const Database&);
