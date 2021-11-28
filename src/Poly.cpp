@@ -124,3 +124,15 @@ Poly &Poly :: operator*=(const Poly& right)
 //{
   //  return (left + (-1) * right);
 //}
+Poly operator*(const Poly& left, const int num)
+{
+    Poly newPoly;
+    if(num>0)
+        for (int i = 0;i < num;i++)
+        {
+            
+            newPoly += left;
+        }
+
+    return new Polyl;
+}

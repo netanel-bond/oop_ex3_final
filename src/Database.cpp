@@ -9,7 +9,7 @@ using std::endl;
 Database::~Database() 
 {
 
-	//deleteList();
+	deleteList();
 
 }
 
@@ -290,9 +290,9 @@ int Database::getListSize() const
 	return m_listSize;
 }
 
-Database& Database :: operator*(const Database right)
+Database operator*(const Database& Left,const Database& right)
 {
-	List* lHead = this->getHead();
+	List* lHead = Left.getHead();
 	//List* rHead = right.getHead();
 	Database newDatabase1,newDatabase2;
 	List* newHead1 = NULL,*newHead2;
@@ -323,6 +323,7 @@ Database& Database :: operator*(const Database right)
 		newDatabase1.setHead(newHead1, right.getListSize());
 		newDatabase2 =newDatabase1+ newDatabase2;
 		lHead = lHead->next;
+		newHead1 = NULL;
 	}
 	return newDatabase2;
 }
