@@ -13,7 +13,32 @@ Database::~Database()
 
 }
 
+Database::Database(const Database& right)
+{
+	
+	m_head = NULL;
+	List** node;
 
+	m_listSize = right.getListSize();
+
+	for (int i = 0; i < m_listSize; i++)
+	{
+
+		if (m_head == NULL)
+		{
+			m_head = nodeAllocate(right.getExpo(i), right.getRational(i));
+			node = &m_head->next;
+		}
+
+		else
+		{
+			*node = nodeAllocate(right.getExpo(i), right.getRational(i));
+			node = &(*node)->next;
+		}
+
+
+	}
+}
 Database::Database(const Rational rat) 
 {
 	m_head = nodeAllocate(0, rat);
@@ -85,7 +110,11 @@ List* Database::nodeAllocate(const int expo, const Rational& rat)
 int Database::getExpo(int i) const
 {
 	List* node = this->m_head;
-
+	if (node == NULL)
+	{
+		cout << "node allocation failed" << endl;
+		exit(EXIT_FAILURE);
+	}
 	int index = 0;
 
 	while (index < i && index < m_listSize-1)
@@ -106,7 +135,11 @@ int Database::getExpo(int i) const
 Rational Database::getRational(int i) const 
 {
 	List* node = this->m_head;
-
+	if (node == NULL)
+	{
+		cout << "error";
+		
+	}
 	int index = 0;
 
 	while (index < i && index < m_listSize)
@@ -138,7 +171,7 @@ Database operator+ (const Database &left,const Database& right)
 			while(rHead)
 			{
 				struct List* temp = new (std::nothrow)struct List;
-
+				temp->next = NULL;
 				if (lHead->expo == rHead->expo)
 				{
 					size++;
@@ -156,6 +189,8 @@ Database operator+ (const Database &left,const Database& right)
 					temp->expo = lHead->expo;
 
 					lHead = lHead->next;
+					if (lHead == NULL)
+						rHead->next;
 
 				}
 				else 
@@ -165,6 +200,8 @@ Database operator+ (const Database &left,const Database& right)
 					temp->rat = rHead->rat;
 					temp->expo = rHead->expo;
 					rHead = rHead->next;
+					if (rHead == NULL)
+						lHead->next;
 				}
 
 				if (newHead==NULL)
@@ -179,6 +216,7 @@ Database operator+ (const Database &left,const Database& right)
 			}
 
 		}
+		
 		newDatabase.setHead(newHead, size);
 		return newDatabase;
 
@@ -199,8 +237,7 @@ Database& Database::operator=(const Database right)
 {
 	if(m_head!=NULL)
 		deleteList();
-	if (right.m_head == NULL)
-		cout << "reeikkk";
+
 	m_head = NULL;
 	List** node;
 
@@ -211,7 +248,6 @@ Database& Database::operator=(const Database right)
 
 			if (m_head == NULL)
 			{
-				cout << right.getExpo(1);
 				m_head = nodeAllocate(right.getExpo(i), right.getRational(i));
 				node = &m_head->next;
 			}
@@ -242,7 +278,7 @@ void Database::deleteList()
 		temp = m_head;
 		m_head = m_head->next;
 
-		free( temp);
+		free(temp);
 	}
 	m_head = NULL;
 }
@@ -252,3 +288,37 @@ int Database::getListSize() const
 	return m_listSize;
 }
 
+Database& Database :: operator*(const Database right)
+{
+	List* lHead = this->getHead();
+	List* rHead = right.getHead();
+	Database newDatabase1,newDatabase2;
+	List* newHead1 = NULL,*newHead2;
+	List* newTail1 = NULL,newTail2;
+	
+	while (lHead)
+	{
+		struct List* temp = new (std::nothrow)struct List;
+		temp->next = NULL;
+		while (rHead)
+		{	
+
+			temp->rat = lHead->rat * rHead->rat;
+			temp->expo = lHead->expo + rHead->expo;
+			if (newHead1 == NULL)
+			{
+				newHead1 = newTail1 = temp;
+			}
+			else
+			{
+				newTail1->next = temp;
+				newTail1 = temp;
+			}
+			rHead = rHead->next;
+		}
+		newDatabase1.setHead(newHead1, right.getListSize());
+		newDatabase2 =newDatabase1+ newDatabase2;
+		lHead = lHead->next;
+	}
+	return newDatabase2;
+}
